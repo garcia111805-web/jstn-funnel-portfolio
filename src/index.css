@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4.7%;
+    --foreground: 220 14% 96%;
+    --card: 0 0% 6%;
+    --card-foreground: 220 14% 96%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 220 14% 96%;
+    --primary: 140 69% 53%;
+    --primary-foreground: 0 0% 4.7%;
+    --secondary: 220 9% 14%;
+    --secondary-foreground: 220 14% 96%;
+    --muted: 220 9% 14%;
+    --muted-foreground: 215 14% 68%;
+    --accent: 140 69% 53%;
+    --accent-foreground: 0 0% 4.7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 9% 18%;
+    --input: 220 9% 18%;
+    --ring: 140 69% 53%;
+    --radius: 1.125rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Sora', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3c;
+}
+
+/* Animated Grid Background */
+.animated-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.animated-grid::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(rgba(62, 214, 105, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(62, 214, 105, 0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 20s linear infinite;
+}
+
+.animated-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(11, 11, 12, 0.85) 100%);
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+
+/* Floating dots animation */
+.floating-dots {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.floating-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(62, 214, 105, 0.4);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  90% {
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* Vignette overlay */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(11, 11, 12, 0.4) 100%);
+}
+
+/* Grain overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Pulsing dot */
+.pulsing-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  background: #3ED669;
+  border-radius: 50%;
+}
+
+.pulsing-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(62, 214, 105, 0.4);
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* Bouncing chevron */
+.bouncing-chevron {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+/* Card hover effect - disabled */
+.card-hover {
+  /* No hover animations */
+}
+
+/* Button hover effects */
+.btn-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(62, 214, 105, 0.3);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Ghost button */
+.btn-ghost {
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(246, 247, 249, 0.08);
+  border-color: rgba(246, 247, 249, 0.2);
+}
+
+/* Section transitions */
+.section-content {
+  position: relative;
+  z-index: 10;
+}
+
+/* Light section styles */
+.light-section {
+  background: #F6F7F9;
+  color: #0B0B0C;
+}
+
+.light-section .text-secondary {
+  color: #3C4149;
+}
+
+/* Filmstrip card - no hover animations */
+.filmstrip-card {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.filmstrip-card img {
+  /* No hover scale */
+}
+
+/* Stat card - no hover animations */
+.stat-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(246, 247, 249, 0.08);
+  border-radius: 18px;
+}
+
+/* Work card - no hover animations */
+.work-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  cursor: pointer;
+}
+
+/* System row card */
+.system-row-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(246, 247, 249, 0.06);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* Tag pill */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(62, 214, 105, 0.1);
+  border: 1px solid rgba(62, 214, 105, 0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #3ED669;
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* FAQ accordion */
+.faq-item {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(246, 247, 249, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: rgba(246, 247, 249, 0.12);
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+}
+
+.faq-item[data-state="open"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Check/X icons */
+.check-icon {
+  color: #3ED669;
+}
+
+.x-icon {
+  color: #ef4444;
+}
+
+/* Dimmed text */
+.text-dimmed {
+  color: rgba(167, 173, 182, 0.5);
+}
+
+/* Founder portrait */
+.founder-portrait {
+  overflow: hidden;
+  border: 2px solid rgba(62, 214, 105, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-grid::before {
+    background-size: 40px 40px;
+  }
+}
