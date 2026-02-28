@@ -47,7 +47,7 @@ export function Navigation() {
             }`}
         >
           <div className="px-6 lg:px-8">
-            <div className="flex items-center gap-8 lg:gap-12 h-14 lg:h-16">
+            <div className="flex items-center gap-8 lg:gap-12 h-20 lg:h-24">
               {/* Logo */}
               <a
                 href="#"
@@ -57,7 +57,7 @@ export function Navigation() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
-                <img src="/logo pic with name.png" alt="jstn logo" className="h-12 lg:h-16 w-auto object-contain" />
+                <img src="/logo pic with name.png" alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
               </a>
 
               {/* Desktop Navigation */}

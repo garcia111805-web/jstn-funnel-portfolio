@@ -6,7 +6,7 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
           {/* Left - Logo */}
           <div className="flex items-center">
-            <img src="/logo pic with name.png" alt="jstn logo" className="h-12 lg:h-16 w-auto object-contain" />
+            <img src="/logo pic with name.png" alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
           </div>
 
           {/* Center - Empty/Removed */}
