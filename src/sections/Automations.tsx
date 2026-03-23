@@ -6,12 +6,12 @@ import { Check, ChevronLeft, ChevronRight } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const filmstripImages = [
-    { step: '01', title: 'Homeowner Check', desc: 'Instantly filters out renters by politely informing them that solar is only applicable to homeowners.', url: '/qualification/Screenshot 2026-02-23 221411.png' },
-    { step: '02', title: 'Utility Bill', desc: 'Captures and verifies their monthly electric bill. If it is under $150, a polite message prevents further questions.', url: '/qualification/Screenshot 2026-02-23 221419.png' },
-    { step: '03', title: 'Contact Info', desc: 'Secures their name, email, and best phone number early in the process.', url: '/qualification/Screenshot 2026-02-23 221428.png' },
-    { step: '04', title: 'Roof Details', desc: 'Gathers essential details like roof material and shading for a smoother installation assessment.', url: '/qualification/Screenshot 2026-02-23 221454.png' },
-    { step: '05', title: 'Additional Info', desc: 'Collects final details. Thanks to GHL sticky settings, they will not enter the same info (like names and emails) again.', url: '/qualification/Screenshot 2026-02-23 221812.png' },
-    { step: '06', title: 'Booking the Call', desc: 'Automatically schedules a call with the fully qualified lead directly onto your calendar.', url: '/qualification/Screenshot 2026-02-24 222644.png' },
+    { step: '01', title: 'Contact Info', desc: 'Secures their name, email, and best phone number early in the process.', url: '/qualification/Screenshot 2026-02-23 221411.png' },
+    { step: '02', title: 'Goals Check', desc: 'Asks what their main fitness goal is (weight loss, muscle gain, endurance, etc) to personalize the conversation.', url: '/qualification/Screenshot 2026-02-23 221419.png' },
+    { step: '03', title: 'Experience Level', desc: 'Determines if they are a beginner or experienced athlete so trainers know how to approach them.', url: '/qualification/Screenshot 2026-02-23 221428.png' },
+    { step: '04', title: 'Schedule', desc: 'Identifies when they plan to work out (morning, evening, etc) to ensure the gym fits their lifestyle.', url: '/qualification/Screenshot 2026-02-23 221454.png' },
+    { step: '05', title: 'Opt-In', desc: 'Secures SMS compliance for communication so your follow-up campaigns stay legal and active.', url: '/qualification/Screenshot 2026-02-23 221812.png' },
+    { step: '06', title: 'Booking the Tour', desc: 'Automatically schedules a gym tour with the high-intent lead directly onto your calendar.', url: '/qualification/Screenshot 2026-02-24 222644.png' },
 ];
 
 export function Automations() {
@@ -85,7 +85,7 @@ export function Automations() {
                         Automated <span className="text-jstn-green">Qualification</span>.
                     </h2>
                     <p className="text-jstn-text-secondary text-base lg:text-lg max-w-2xl mx-auto lg:mx-0">
-                        The next step after the website. We embed an automated qualification sequence that politely turns away renters and tire-kickers, while booking serious, ready-to-close homeowners straight to your calendar.
+                        The next step after the website. We embed an automated engagement sequence that uncovers fitness goals and books high-intent gym tours straight to your calendar.
                     </p>
                 </div>
 
@@ -101,10 +101,10 @@ export function Automations() {
                             </div>
                             <div>
                                 <p className="font-display text-3xl font-semibold text-jstn-text-primary mb-3">
-                                    Qualify Before Booking
+                                    Engage Before Booking
                                 </p>
                                 <p className="text-base text-jstn-text-secondary leading-relaxed">
-                                    Your time is your most expensive asset. Stop letting bad leads drain your week. We automatically filter out the noise so you only ever get out of your truck for deals you can actually close.
+                                    Your front desk is overwhelmed. We automatically engage new leads, uncover their fitness goals, and book high-intent tours so your staff can focus on the members already in the building.
                                 </p>
                             </div>
                         </div>

@@ -1,138 +1,50 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
+import { MessageSquare, PhoneMissed, Star, RefreshCw, ArchiveRestore } from 'lucide-react';
 const systems = [
   {
-    tag: 'Response Time',
-    name: 'Instant Lead Follow-Up',
-    copy: "You're on the roof or driving to a site survey. While you're busy, we hit every new lead with a text within 60 seconds. You never lose a deal to the 'fastest replier' again.",
-    caption: 'Fires instantly the second a lead comes in.',
-    image: '/automation/automated followups.png',
-    layout: 'right',
+    icon: MessageSquare,
+    tag: 'CLOSE MORE DEALS',
+    name: 'Automated Follow Ups',
+    copy: "Leads come in through multiple channels, contact forms, phone calls, and chat widgets. The moment a lead reaches out through any of them, they get an instant automated reply making sure they always feel heard and never ignored.",
+    caption: 'Every lead gets a response, every single time.',
   },
   {
-    tag: 'Never Miss a Lead',
-    name: 'Missed Call Text-Back',
-    copy: "If you don't answer, she's calling the next installer on Google. We catch that missed call instantly with a text asking how we can help—saving the job before it's gone.",
-    caption: 'Catches every missed call, exactly when it happens.',
-    image: '/automation/missedcall textback.png',
-    layout: 'left',
+    icon: PhoneMissed,
+    tag: 'NEVER MISS A LEAD',
+    name: 'Missed Call Text Back',
+    copy: "You can't always answer the phone, maybe you're up on a roof or in the middle of a job. The second a call gets missed, an automatic text goes out so the lead stays warm and doesn't call your competitor instead.",
+    caption: 'Because the first business to respond wins the job.',
   },
   {
-    tag: 'Protect Your Calendar',
-    name: 'Automated Appointment Reminders',
-    copy: "Nothing hurts more than driving 45 minutes to a locked door. We automate texts and emails before the appointment so they actually remember you're coming.",
-    caption: 'A polite, persistent sequence that guarantees they show up.',
-    images: [
-      '/automation/reducing no show (online call).png',
-      '/automation/reducing no show (site survey).png',
-      '/automation/reducing no show ( installation day).png',
-    ],
-    subLabels: ['Online Call', 'Site Survey', 'Installation Day'],
-    layout: 'right',
+    icon: Star,
+    tag: 'BUILD TRUST',
+    name: 'Reputation Management',
+    copy: "Happy clients get sent straight to Google to leave a public 5 star review. Unhappy clients are handled privately so your online reputation stays protected.",
+    caption: 'More 5 star reviews. Zero public complaints.',
   },
   {
-    tag: 'Social Proof on Autopilot',
-    name: 'Automated Review Requests',
-    copy: "You just finished a perfect install. Instead of hoping they review you, the system automatically asks for one while they're still smiling. Watch your local rank climb.",
-    caption: 'Fires off as soon as the project is marked complete.',
-    image: '/automation/reputation management.png',
-    layout: 'left',
-    maxWidthClass: 'max-w-sm',
+    icon: RefreshCw,
+    tag: 'RE-ENGAGE',
+    name: 'Remarketing Campaigns',
+    copy: "Once a client leaves a review, we automatically send them a discount they can use for their next job or share with a friend to get them a deal too.",
+    caption: 'Turn happy clients into repeat customers and referral machines.',
   },
   {
-    tag: 'Hidden Revenue',
+    icon: ArchiveRestore,
+    tag: 'HIDDEN REVENUE',
     name: 'Database Reactivation',
-    copy: "You have old leads who said 'not right now' 6 months ago. Our system sends them a friendly text to see if they're ready, turning a dead spreadsheet into booked surveys.",
-    caption: 'Extracts thousands in cash from leads you already bought.',
-    image: '/automation/database reactivation.png',
-    layout: 'right',
-    maxWidthClass: 'max-w-lg',
+    copy: "Got old contacts who never hired you? We send them a simple friendly message to remind them you are still around and ready to help. No lead left behind.",
+    caption: 'Recover revenue from leads you already worked hard to get.',
   },
 ];
 
 export function System() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        headerRef.current,
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      rowsRef.current.forEach((row) => {
-        if (!row) return;
-
-        const tagPill = row.querySelector('.tag-pill');
-
-        gsap.fromTo(
-          row,
-          { y: 60, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: row,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
-
-        if (tagPill) {
-          gsap.fromTo(
-            tagPill,
-            { scale: 0.92, opacity: 0 },
-            {
-              scale: 1,
-              opacity: 1,
-              duration: 0.4,
-              ease: 'back.out(1.3)',
-              scrollTrigger: {
-                trigger: row,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-              },
-            }
-          );
-        }
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
-      ref={sectionRef}
       id="system"
       className="relative w-full py-20 lg:py-32"
     >
       <div className="section-content w-full px-6 lg:px-12 max-w-7xl mx-auto">
-        <div ref={headerRef} className="mb-16 lg:mb-24">
-          <span className="tag-pill mb-4 inline-flex">The Solution: Part 3</span>
+        <div className="mb-16 lg:mb-24">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-jstn-text-primary max-w-3xl leading-tight tracking-tight mb-4">
             Built Once. Runs Every Day Without You.
           </h2>
@@ -141,59 +53,45 @@ export function System() {
           </p>
         </div>
 
-        <div className="space-y-16 lg:space-y-24">
-          {systems.map((system, index) => (
-            <div
-              key={index}
-              ref={(el) => { rowsRef.current[index] = el; }}
-              className={`system-row-card flex flex-col ${system.layout === 'right' ? 'lg:flex-row-reverse' : 'lg:flex-row'
-                } gap-8 lg:gap-12 p-6 lg:p-10`}
-            >
-              <div className={`copy-block flex flex-col justify-center shrink-0 ${system.images ? 'lg:w-[20%]' : 'lg:w-[35%]'}`}>
-                <span className="tag-pill mb-4 self-start">{system.tag}</span>
-                <h3 className="font-display text-2xl lg:text-3xl font-semibold text-jstn-text-primary mb-4">
-                  {system.name}
-                </h3>
-                <p className="text-jstn-text-secondary leading-relaxed mb-4">
-                  {system.copy}
-                </p>
-                <p className="text-sm text-jstn-text-secondary/60">
-                  {system.caption}
-                </p>
-              </div>
+        {/* Systems Cards - Bento Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          {systems.map((system, index) => {
+            const Icon = system.icon;
+            return (
+              <div
+                key={index}
+                className={`stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden ${index === 4 ? "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8 lg:justify-between" : "gap-6"}`}
+              >
+                <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+                
+                <div className={`relative z-10 w-full flex flex-col ${index === 4 ? "lg:w-1/2" : "h-full"}`}>
+                  {/* Header (Badge + Icon) */}
+                  <div className="flex items-center gap-4 mb-5">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
+                      <Icon className="w-5 h-5 text-jstn-green" />
+                    </div>
+                    <span className="tag-pill m-0 inline-flex">{system.tag}</span>
+                  </div>
 
-              <div className={`image-block flex items-center justify-center ${system.images ? 'lg:w-[80%]' : 'lg:w-[65%]'}`}>
-                {system.images ? (
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 h-full items-center">
-                    {system.images.map((img, imgIndex) => (
-                      <div key={imgIndex} className="flex flex-col items-center justify-center">
-                        <div className="w-full rounded-xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)] border border-white/5">
-                          <img
-                            src={img}
-                            alt={`${system.subLabels?.[imgIndex]}`}
-                            className="w-full h-auto object-cover"
-                            loading="lazy"
-                          />
-                        </div>
-                        <p className="text-xs sm:text-sm font-medium text-jstn-text-secondary/80 mt-3 text-center">
-                          {system.subLabels?.[imgIndex]}
-                        </p>
-                      </div>
-                    ))}
+                  <h3 className="font-display text-2xl lg:text-3xl font-semibold text-jstn-text-primary mb-3">
+                    {system.name}
+                  </h3>
+                  <p className="text-sm lg:text-base text-jstn-text-secondary leading-relaxed mb-4 lg:mb-0">
+                    {system.copy}
+                  </p>
+                </div>
+
+                {/* Subtext/Caption */}
+                <div className={`relative z-10 w-full mt-auto ${index === 4 ? "lg:w-1/2 lg:mt-0 lg:pl-6 lg:border-l lg:border-white/10" : ""}`}>
+                  <div className="p-4 lg:p-5 rounded-xl bg-black/40 border border-white/5 shadow-inner">
+                    <p className="text-sm font-medium text-jstn-text-primary/90 italic">
+                      "{system.caption}"
+                    </p>
                   </div>
-                ) : (
-                  <div className={`w-full ${system.maxWidthClass || 'max-w-md'} mx-auto rounded-xl overflow-hidden shadow-[0_10px_30px_-15px_rgba(0,0,0,0.5)] border border-white/5 bg-[#1C1C1E] p-4 lg:p-6`}>
-                    <img
-                      src={system.image}
-                      alt={system.name}
-                      className="w-full h-auto object-contain rounded-lg"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className="mt-16 lg:mt-24 text-center">

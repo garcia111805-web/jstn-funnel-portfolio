@@ -1,236 +1,86 @@
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Clock, Home, Star, CalendarX } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import { PhoneOff, Clock, Star, Users, TrendingDown } from 'lucide-react';
 
 const stats = [
   {
-    icon: Home,
-    stat: '40%',
-    label: 'of solar sales calls go to renters',
-    copy: "You can't install on a rental. That's half your week wasted on conversations that never had a chance.",
-  },
-  {
     icon: Clock,
-    stat: '21×',
-    label: 'lower chance to close if you wait 5 minutes',
-    copy: "Installers follow up hours later—if at all. By then, the homeowner already booked the guy who texted back instantly.",
+    stat: '21x',
+    label: 'lower chance to close if you wait 5 minutes.',
+    copy: "Homeowners call 3 pros at once. If you don't reply instantly, they've already booked the guy who texted back while you were still reaching for your phone. You aren't just losing a lead; you're losing the race before it even starts.",
   },
   {
-    icon: CalendarX,
-    stat: '50%',
-    label: 'of appointments end in a no-show',
-    copy: "Homeowners get busy and forget. When you drive out to a locked door, you burn both your time and your marketing budget.",
+    icon: PhoneOff,
+    stat: '62%',
+    label: 'of calls to small businesses go unanswered.',
+    copy: "When you're under a sink or on a roof, you can't pick up. Every missed call is a customer who just moved to the next contractor on the Google list. Every unanswered call is a high-value contract walking out the door.",
   },
   {
     icon: Star,
-    stat: '5★',
-    label: 'reviews lost because nobody asked',
-    copy: "You do great installs, but if you don't automate the 'ask', your reputation stays flat. More reviews equals more local business.",
+    stat: '80%',
+    label: 'of happy clients forget to leave a review.',
+    copy: "You do great work, but without automation, your Google ranking stays flat. One bad review can kill your trust because you aren't capturing the 5-star feedback that outweighs the noise.",
+  },
+  {
+    icon: Users,
+    stat: '91%',
+    label: 'of clients would refer you, but only 11% are ever asked.',
+    copy: "You’re leaving \"Found Money\" on the table. Without a post-job referral loop, you’re forced to pay for expensive new ads every month instead of growing through automated, high-trust word-of-mouth.",
+  },
+  {
+    icon: TrendingDown,
+    stat: '5x',
+    label: 'more expensive to get a new lead than reactivate an old one.',
+    copy: "You have hundreds of past leads and old customers sitting in an Excel sheet. Without a system to \"wake them up,\" that hidden profit stays buried in your inbox while you spend more money hunting for new strangers.",
   },
 ];
 
 export function Pain() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(
-        headerRef.current,
-        { y: 24, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Cards animation
-      cardsRef.current.forEach((card, index) => {
-        if (!card) return;
-
-        gsap.fromTo(
-          card,
-          { y: 60, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-            delay: index * 0.1,
-          }
-        );
-
-        // Stat number animation
-        const statNum = card.querySelector('.stat-number');
-        if (statNum) {
-          gsap.fromTo(
-            statNum,
-            { scale: 0.92, y: 12, opacity: 0 },
-            {
-              scale: 1,
-              y: 0,
-              opacity: 1,
-              duration: 0.5,
-              ease: 'back.out(1.4)',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top 80%',
-                toggleActions: 'play none none reverse',
-              },
-              delay: index * 0.1 + 0.2,
-            }
-          );
-        }
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
 
   return (
     <section
-      ref={sectionRef}
       id="problem"
       className="relative w-full py-12 lg:py-16"
     >
       <div className="section-content w-full px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Header */}
-        <div ref={headerRef} className="mb-8 lg:mb-10">
+        <div className="mb-8 lg:mb-10">
           <span className="tag-pill mb-4 inline-flex">The Problem</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-jstn-text-primary max-w-3xl leading-tight tracking-tight mb-4">
-            You're Losing Jobs You Don't Even Know You Had.
+            You're Bleeding Jobs You Don't Even Know You Had.
           </h2>
           <p className="text-jstn-text-secondary text-base lg:text-lg max-w-xl lg:max-w-3xl">
-            You're talking to unqualified leads, losing deals to faster competitors, driving to empty houses, and leaving 5-star reviews on the table. Here's what your leaky system is actually costing you.
+            You're ignoring inbound calls, replying to web leads too late, letting past clients forget about you, and losing thousands to unanswered estimates. Here's what your leaky system is actually costing you.
           </p>
         </div>
 
         {/* Stat Cards - Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
-          {(() => {
-            const Icon21x = stats[0].icon;
-            const Icon40p = stats[1].icon;
-            const Icon78p = stats[2].icon;
-            const Icon5s = stats[3].icon;
-
+          {stats.map((item, index) => {
+            const Icon = item.icon;
             return (
-              <>
-                {/* Card 1 (40%) - Half Width */}
-                <div
-                  ref={(el) => { cardsRef.current[0] = el; }}
-                  className="stat-card p-5 lg:p-6 col-span-1 flex flex-col group relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
-                  <div className="relative z-10 flex items-center gap-4 mb-4 lg:mb-6">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
-                      <Icon21x className="w-4 h-4 text-jstn-green" />
-                    </div>
-                    <p className="stat-number font-display text-3xl lg:text-4xl font-bold text-jstn-green tracking-tight">
-                      {stats[0].stat}
-                    </p>
+              <div
+                key={index}
+                className={`stat-card flex flex-col items-start gap-4 p-6 lg:p-8 ${index === 4 ? "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8 justify-center" : ""}`}
+              >
+                <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+                <div className="relative z-10 flex items-center gap-4 mb-4 lg:mb-6">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
+                    <Icon className="w-4 h-4 text-jstn-green" />
                   </div>
-                  <div className="relative z-10">
-                    <p className="text-sm lg:text-base text-jstn-text-primary leading-relaxed font-medium mb-2">
-                      {stats[0].label}
-                    </p>
-                    <p className="text-sm text-jstn-text-secondary leading-relaxed">
-                      {stats[0].copy}
-                    </p>
-                  </div>
+                  <p className="stat-number font-display text-3xl lg:text-4xl font-bold text-jstn-green tracking-tight">
+                    {item.stat}
+                  </p>
                 </div>
-
-                {/* Secondary Card (21x) - Half Width */}
-                <div
-                  ref={(el) => { cardsRef.current[1] = el; }}
-                  className="stat-card p-5 lg:p-6 col-span-1 flex flex-col group"
-                >
-                  <div className="flex items-center gap-4 mb-4 lg:mb-6">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
-                      <Icon40p className="w-4 h-4 text-jstn-green" />
-                    </div>
-                    <p className="stat-number font-display text-3xl lg:text-4xl font-bold text-jstn-green tracking-tight">
-                      {stats[1].stat}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm lg:text-base text-jstn-text-primary leading-relaxed font-medium mb-2">
-                      {stats[1].label}
-                    </p>
-                    <p className="text-sm text-jstn-text-secondary leading-relaxed">
-                      {stats[1].copy}
-                    </p>
-                  </div>
+                <div className="relative z-10">
+                  <p className="text-sm lg:text-base text-jstn-text-primary leading-relaxed font-medium mb-2">
+                    {item.label}
+                  </p>
+                  <p className="text-sm text-jstn-text-secondary leading-relaxed">
+                    {item.copy}
+                  </p>
                 </div>
-
-                {/* Tertiary Card (78%) - Half Width */}
-                <div
-                  ref={(el) => { cardsRef.current[2] = el; }}
-                  className="stat-card p-5 lg:p-6 col-span-1 flex flex-col group"
-                >
-                  <div className="flex items-center gap-4 mb-4 lg:mb-6">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
-                      <Icon78p className="w-4 h-4 text-jstn-green" />
-                    </div>
-                    <p className="stat-number font-display text-3xl lg:text-4xl font-bold text-jstn-green tracking-tight">
-                      {stats[2].stat}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm lg:text-base text-jstn-text-primary leading-relaxed font-medium mb-2">
-                      {stats[2].label}
-                    </p>
-                    <p className="text-sm text-jstn-text-secondary leading-relaxed">
-                      {stats[2].copy}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 4 (50%) - Half Width */}
-                <div
-                  ref={(el) => { cardsRef.current[3] = el; }}
-                  className="stat-card p-5 lg:p-6 col-span-1 flex flex-col group relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
-                  <div className="relative z-10 flex items-center gap-4 mb-4 lg:mb-6">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
-                      <Icon5s className="w-4 h-4 text-jstn-green" />
-                    </div>
-                    <p className="stat-number font-display text-3xl lg:text-4xl font-bold text-jstn-green tracking-tight">
-                      {stats[3].stat}
-                    </p>
-                  </div>
-                  <div className="relative z-10">
-                    <p className="text-sm lg:text-base text-jstn-text-primary leading-relaxed font-medium mb-2">
-                      {stats[3].label}
-                    </p>
-                    <p className="text-sm text-jstn-text-secondary leading-relaxed">
-                      {stats[3].copy}
-                    </p>
-                  </div>
-                </div>
-              </>
+              </div>
             );
-          })()}
+          })}
         </div>
 
         {/* Closing line */}

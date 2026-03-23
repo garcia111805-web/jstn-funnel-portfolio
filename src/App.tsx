@@ -7,7 +7,6 @@ import { Footer } from './components/Footer';
 import { Hero } from './sections/Hero';
 import { Pain } from './sections/Pain';
 import { SelectedWork } from './sections/SelectedWork';
-import { Automations } from './sections/Automations';
 import { System } from './sections/System';
 import { About } from './sections/About';
 import { FAQ } from './sections/FAQ';
@@ -38,7 +37,6 @@ function App() {
         <Hero />
         <Pain />
         <SelectedWork />
-        <Automations />
         <System />
         <About />
         <FAQ />

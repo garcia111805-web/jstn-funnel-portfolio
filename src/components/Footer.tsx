@@ -1,4 +1,5 @@
 
+import newLogo from '../../materials/logo updated.png';
 export function Footer() {
   return (
     <footer className="relative w-full py-8 lg:py-12 border-t border-white/5">
@@ -6,14 +7,14 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
           {/* Left - Logo */}
           <div className="flex items-center">
-            <img src="/logo pic with name.png" alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
+            <img src={newLogo} alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
           </div>
 
           {/* Center - Empty/Removed */}
 
           {/* Right - Tagline */}
           <div className="text-sm text-jstn-text-secondary/60">
-            Solar Automation Systems
+            Home Service Automation Systems
           </div>
         </div>
 

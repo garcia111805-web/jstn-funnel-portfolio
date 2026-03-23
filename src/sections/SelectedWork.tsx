@@ -1,150 +1,85 @@
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowUpRight, X } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
+import hvacDesktop from '../../materials/hvac desktop version.png';
+import hvacMobile from '../../materials/hvac mobile version.png';
+import landscapingDesktop from '../../materials/landscaping desktop version.png';
+import landscapingMobile from '../../materials/landscaping mobile version.png';
 
 const works = [
   {
-    name: 'Solarlite',
-    tag: 'Solar Lead Website',
-    image: 'https://i.imgur.com/pLWksWz.png',
-    url: 'https://solarlite6.vercel.app/',
+    name: 'HVAC Pro Solutions',
+    tag: 'Conversion-Optimized',
+    desktopImage: hvacDesktop,
+    mobileImage: hvacMobile,
   },
   {
-    name: 'EconoSolar',
-    tag: 'Qualification Website',
-    image: 'https://i.imgur.com/0BFWNR9.png',
-    url: 'https://econo-solar-sth7-6dmg1dvcb-justins-projects-d91d43d5.vercel.app/',
-  },
-  {
-    name: 'MariSolar',
-    tag: 'Appointment Booking Website',
-    image: 'https://i.imgur.com/rCc4yZy.png',
-    url: 'https://marisolar-fvpz-euzrgay24-justins-projects-d91d43d5.vercel.app/',
-  },
-  {
-    name: 'ZenithSolar',
-    tag: 'Lead Generation Website',
-    image: 'https://i.imgur.com/6Fl3KXi.png',
-    url: 'https://zenithsolar-7aax8ihps-justins-projects-d91d43d5.vercel.app/',
+    name: 'Elite Landscaping',
+    tag: 'Lead Generation',
+    desktopImage: landscapingDesktop,
+    mobileImage: landscapingMobile,
   },
 ];
 
 export function SelectedWork() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [activeWork, setActiveWork] = useState<number | null>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const ctx = gsap.context(() => {
-      // Header animation
-      gsap.fromTo(
-        headerRef.current,
-        { y: 18, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: headerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
-
-      // Cards animation
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
-
-        gsap.fromTo(
-          card,
-          { y: 60, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
-      });
-    }, section);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <>
       <section
-        ref={sectionRef}
         id="work"
         className="relative w-full py-20 lg:py-32 bg-jstn-bg"
       >
         <div className="section-content w-full px-6 lg:px-12 max-w-7xl mx-auto">
           {/* Header */}
-          <div ref={headerRef} className="mb-12 lg:mb-16">
+          <div className="mb-12 lg:mb-16">
             <span className="tag-pill mb-4 inline-flex">
-              The Solution: Part 1
+              The Solution
             </span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-jstn-text-primary max-w-2xl leading-tight tracking-tight mb-4">
               High-Converting Websites.
             </h2>
             <p className="text-jstn-text-secondary text-base lg:text-lg max-w-2xl">
-              Before we qualify leads, we have to capture them. Here are samples of the high-performance websites we build to drive initial homeowner interest.
+              Not your typical display website. Built to convert, not just impress, with a sticky quote button, clickable phone number, and live chat widget so every visitor has a reason to reach out.
             </p>
           </div>
 
           {/* Work Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full mt-12 lg:mt-20">
             {works.map((work, index) => (
               <div
                 key={index}
-                ref={(el) => { cardsRef.current[index] = el; }}
-                className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden cursor-pointer hover:border-jstn-green/30 transition-colors duration-300 shadow-xl"
-                onClick={() => setActiveWork(index)}
+                className="relative bg-white/5 border border-white/10 rounded-[2rem] p-6 lg:p-8 shadow-xl flex flex-col justify-end"
               >
-                {/* Browser Frame Header */}
-                <div className="h-10 bg-white/5 border-b border-white/10 flex items-center px-4 gap-2">
-                  <div className="w-3 h-3 rounded-full bg-white/20"></div>
-                  <div className="w-3 h-3 rounded-full bg-white/20"></div>
-                  <div className="w-3 h-3 rounded-full bg-white/20"></div>
+                {/* Desktop View (MacBook Frame) Aligned to Right */}
+                <div className="w-[85%] relative z-10 ml-auto mr-0 mb-6 lg:mb-12 shadow-2xl">
+                  {/* Screen Frame with Fixed Aspect Ratio */}
+                  <div className="relative w-full bg-[#1e1e1e] border-[8px] lg:border-[12px] border-[#2a2a2a] rounded-t-xl rounded-b-[2px] flex flex-col overflow-hidden aspect-[16/10]">
+                     {/* Camera */}
+                     <div className="absolute top-1 lg:top-1.5 left-1/2 -translate-x-1/2 w-1 h-1 lg:w-1.5 lg:h-1.5 rounded-full bg-[#111] z-30 pointer-events-none"></div>
+                     {/* Browser Header */}
+                     <div className="h-4 lg:h-6 bg-[#2d2d2d] flex items-center px-2 gap-1 w-full border-b border-[#1f1f1f] shrink-0 z-20">
+                       <div className="flex gap-1">
+                         <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#ff5f56]"></div>
+                         <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#ffbd2e]"></div>
+                         <div className="w-1.5 h-1.5 lg:w-2 lg:h-2 rounded-full bg-[#27c93f]"></div>
+                       </div>
+                     </div>
+                     {/* Content naturally scrollable within device height with hidden scrollbar */}
+                     <div className="w-full h-full bg-black relative overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                       <img src={work.desktopImage} alt={`${work.name} Desktop`} className="w-full h-auto block object-top" loading="lazy" />
+                     </div>
+                  </div>
+                  {/* MacBook Bottom Lip */}
+                  <div className="relative h-3 lg:h-4 bg-gradient-to-b from-[#e0e0e0] to-[#b0b0b0] rounded-b-xl rounded-t-[1px] shadow-[0_20px_40px_rgba(0,0,0,0.6)] flex justify-center border-t border-[#f0f0f0] -mx-3 lg:-mx-5 z-20 pointer-events-none">
+                     <div className="w-16 lg:w-24 h-[3px] lg:h-1 bg-[#8a8a8a] rounded-b-md shadow-inner"></div>
+                  </div>
                 </div>
 
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={work.image}
-                    alt={work.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-jstn-bg/60 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                    <span className="px-6 py-3 bg-jstn-green text-jstn-bg font-semibold rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      Click to view live site
-                    </span>
+                {/* Mobile View (iPhone Frame) Overlapping on the Left side */}
+                <div className="absolute left-4 lg:-left-2 bottom-4 lg:bottom-10 w-[28%] max-w-[120px] lg:max-w-[130px] aspect-[393/852] rounded-[1rem] lg:rounded-[1.5rem] border-[4px] lg:border-[6px] border-[#1a1a1a] shadow-[0_20px_40px_rgba(0,0,0,0.8)] bg-black z-30 flex flex-col pointer-events-auto overflow-hidden">
+                  {/* Dynamic Island */}
+                  <div className="absolute top-1.5 inset-x-0 flex justify-center z-30 pointer-events-none">
+                    <div className="w-[30%] h-[8px] lg:h-[12px] bg-black rounded-full shadow-md"></div>
                   </div>
-                  {/* Static overlay with info */}
-                  <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/90 to-transparent pointer-events-none z-10 transition-opacity duration-300 group-hover:opacity-0" />
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 z-10 transition-opacity duration-300 group-hover:opacity-0">
-                    <span className="font-display font-semibold text-white">
-                      {work.name}
-                    </span>
-                    <span className="text-sm text-white/70">
-                      — {work.tag}
-                    </span>
-                    <ArrowUpRight className="w-4 h-4 text-jstn-green ml-1" />
+                  {/* Content naturally scrollable with hidden scrollbar */}
+                  <div className="relative w-full h-full bg-black rounded-[0.5rem] lg:rounded-[0.8rem] overflow-y-auto overflow-x-hidden pt-4 lg:pt-6 flex flex-col [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+                    <img src={work.mobileImage} alt={`${work.name} Mobile`} className="w-full h-auto block object-top" loading="lazy" />
                   </div>
                 </div>
               </div>
@@ -152,46 +87,6 @@ export function SelectedWork() {
           </div>
         </div>
       </section>
-
-      {/* Modal for iframe */}
-      {activeWork !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-jstn-bg/95 backdrop-blur-xl flex items-center justify-center p-4 lg:p-8"
-          onClick={() => setActiveWork(null)}
-        >
-          <div
-            className="relative w-full max-w-6xl h-[80vh] bg-jstn-bg rounded-2xl overflow-hidden border border-white/10"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between px-4 lg:px-6 py-3 border-b border-white/5">
-              <div className="flex items-center gap-3">
-                <span className="font-display font-semibold text-jstn-text-primary">
-                  {works[activeWork].name}
-                </span>
-                <span className="text-sm text-jstn-text-secondary">
-                  {works[activeWork].tag}
-                </span>
-              </div>
-              <button
-                onClick={() => setActiveWork(null)}
-                className="p-2 hover:bg-white/5 rounded-lg transition-colors"
-              >
-                <X className="w-5 h-5 text-jstn-text-secondary" />
-              </button>
-            </div>
-
-            {/* Iframe */}
-            <iframe
-              src={works[activeWork].url}
-              className="w-full h-[calc(80vh-60px)]"
-              title={works[activeWork].name}
-              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
-          </div>
-        </div>
-      )}
     </>
   );
 }

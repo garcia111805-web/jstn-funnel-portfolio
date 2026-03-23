@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import newLogo from '../../materials/logo updated.png';
 
 const navLinks = [
   { label: 'Problem', href: '#problem' },
@@ -57,7 +58,7 @@ export function Navigation() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
-                <img src="/logo pic with name.png" alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
+                <img src={newLogo} alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
               </a>
 
               {/* Desktop Navigation */}
