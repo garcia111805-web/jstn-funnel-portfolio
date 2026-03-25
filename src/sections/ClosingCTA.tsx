@@ -36,8 +36,8 @@ export function ClosingCTA() {
         <p
           className="text-jstn-text-secondary text-base lg:text-lg mb-6"
         >
-          Every day without a system is a membership that went to someone faster.
-          Get a system built for your gym today.
+          Every day without a system is a high-value job that went to someone faster.{' '}
+          Get a system built for your home service business today.
         </p>
 
         {/* Expectation line */}
@@ -45,8 +45,7 @@ export function ClosingCTA() {
           className="text-jstn-text-secondary/70 text-sm lg:text-base max-w-xl mx-auto mb-8"
         >
           Message us directly — we'll send you a short walkthrough video so you can see
-          exactly how the system works. Then it's just a straight chat from there.
-          No calls. No forms. No pressure.
+          exactly how the system works.
         </p>
 
         {/* CTA Button */}
@@ -57,15 +56,10 @@ export function ClosingCTA() {
           className="btn-primary inline-flex items-center gap-3 px-8 py-4 bg-jstn-green text-jstn-bg font-semibold rounded-full text-base mb-4 cursor-pointer"
         >
           <MessageCircle className="w-5 h-5" />
-          Get a Free Walkthrough
+          Get the Free Demo on WhatsApp
         </a>
 
-        {/* Micro copy */}
-        <p
-          className="text-jstn-text-secondary/50 text-sm"
-        >
-          Usually replies within a few hours.
-        </p>
+
       </div>
     </section>
   );

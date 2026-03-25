@@ -17,8 +17,7 @@ const forJstn = [
 export function About() {
   return (
     <section
-      id="who-is-this-for"
-      className="relative w-full py-20 lg:py-32"
+      className="relative w-full py-10 lg:py-16"
     >
       <div className="section-content w-full px-6 lg:px-12 max-w-7xl mx-auto">
         {/* Header */}
@@ -73,7 +72,7 @@ export function About() {
         {/* Founder Block (About) */}
         <div
           id="about"
-          className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 p-8 lg:p-12 rounded-2xl border border-white/5 bg-white/[0.02] scroll-mt-24"
+          className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 p-6 sm:p-8 lg:p-12 rounded-2xl border border-white/5 bg-white/[0.02] scroll-mt-24"
         >
           {/* Portrait */}
           <div className="founder-portrait flex-shrink-0 w-32 h-40 lg:w-40 lg:h-48 rounded-2xl overflow-hidden border-2 border-jstn-green shadow-[0_0_20px_rgba(34,197,94,0.2)]">
@@ -85,16 +84,18 @@ export function About() {
           </div>
 
           {/* Text */}
-          <div className="founder-text text-center lg:text-left">
-            <p className="text-jstn-text-primary leading-relaxed mb-4">
-              You handle the fitness. We handle everything that happens before a member walks through your door.
-              You'll never chase a lead, follow up manually, or lose a sign-up to a faster competitor again.
+          <div className="founder-text flex-1">
+            <p className="text-jstn-text-primary text-base lg:text-lg leading-relaxed mb-5 font-medium">
+              At JSTN Systems, we keep it simple. No buzzwords, no overcomplicated strategies, no agencies charging a fortune just to confuse you. We built this for home service contractors who are great at their craft but tired of losing jobs to competitors who are simply faster at following up.
             </p>
-            <p className="text-jstn-text-secondary leading-relaxed mb-6">
-              If it doesn't work for your business, it doesn't work for us either.
+            <p className="text-jstn-text-secondary text-base lg:text-lg leading-relaxed mb-6">
+              We handle everything that happens before you pull up to the job site. The follow ups, the missed calls, the review requests, the dead leads sitting in your phone. All of it. You focus on doing the work, we make sure the work never stops coming in.
+            </p>
+            <p className="text-jstn-text-primary/80 italic leading-relaxed mb-6 font-medium">
+              "If it does not grow your business, it does not work for us either."
             </p>
             <p className="font-display text-lg font-semibold text-jstn-green">
-              Justin
+              — Justin
             </p>
           </div>
         </div>

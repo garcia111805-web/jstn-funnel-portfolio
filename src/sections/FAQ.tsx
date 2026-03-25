@@ -15,12 +15,12 @@ const faqs = [
     answer: 'A person sleeps, gets sick, needs training, and makes mistakes under pressure. The system doesn\'t. Same process, perfectly executed, every single time.',
   },
   {
-    question: 'I\'ve tried other marketing services before and they didn\'t work. Why is this different?',
-    answer: 'Most services get you more leads and call it done. The problem was never the number of leads — it was that nobody was qualifying them or following up fast enough. That\'s the exact gap we fill.',
+    question: 'Do we need contracts?',
+    answer: "If it's affordable & awesome, why would we need a contract... if you're happy, you'll stay.",
   },
   {
     question: 'How do we get started?',
-    answer: 'Message us directly. We\'ll send you a short video walkthrough so you can see exactly how the system works — then it\'s just a straight chat conversation from there. No calls, no forms, no pressure.',
+    answer: "Message us directly. We'll send you a short video walkthrough so you can see exactly how the system works.",
   },
 ];
 
@@ -34,7 +34,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="relative w-full py-20 lg:py-32"
+      className="relative w-full py-10 lg:py-16"
     >
       <div className="section-content w-full px-6 lg:px-12 max-w-4xl mx-auto">
         {/* Header */}

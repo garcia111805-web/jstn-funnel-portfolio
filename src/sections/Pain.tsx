@@ -45,7 +45,7 @@ export function Pain() {
         <div className="mb-8 lg:mb-10">
           <span className="tag-pill mb-4 inline-flex">The Problem</span>
           <h2 className="font-display text-3xl sm:text-4xl font-semibold text-jstn-text-primary max-w-3xl leading-tight tracking-tight mb-4">
-            You're Bleeding Jobs You Don't Even Know You Had.
+            You're Losing Jobs Without Even Realizing It.
           </h2>
           <p className="text-jstn-text-secondary text-base lg:text-lg max-w-xl lg:max-w-3xl">
             You're ignoring inbound calls, replying to web leads too late, letting past clients forget about you, and losing thousands to unanswered estimates. Here's what your leaky system is actually costing you.

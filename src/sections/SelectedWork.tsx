@@ -23,20 +23,18 @@ export function SelectedWork() {
     <>
       <section
         id="work"
-        className="relative w-full py-20 lg:py-32 bg-jstn-bg"
+        className="relative w-full pt-10 lg:pt-16 bg-jstn-bg"
       >
         <div className="section-content w-full px-6 lg:px-12 max-w-7xl mx-auto">
           {/* Header */}
           <div className="mb-12 lg:mb-16">
-            <span className="tag-pill mb-4 inline-flex">
-              The Solution
-            </span>
+            <span className="tag-pill mb-4 inline-flex">The Solution: Part 1</span>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-jstn-text-primary max-w-2xl leading-tight tracking-tight mb-4">
               High-Converting Websites.
             </h2>
-            <p className="text-jstn-text-secondary text-base lg:text-lg max-w-2xl">
-              Not your typical display website. Built to convert, not just impress, with a sticky quote button, clickable phone number, and live chat widget so every visitor has a reason to reach out.
-            </p>
+            <p className="text-jstn-text-secondary text-base lg:text-lg max-w-xl lg:max-w-3xl">
+          Most local business websites make it nearly impossible for customers to reach out, no clickable phone number, no form, no chat, just a number sitting there doing nothing. If a ready to buy customer has to work hard just to contact you, they will close the tab and call someone else.
+        </p>
           </div>
 
           {/* Work Cards Grid */}

@@ -9,6 +9,7 @@ import { Pain } from './sections/Pain';
 import { SelectedWork } from './sections/SelectedWork';
 import { System } from './sections/System';
 import { About } from './sections/About';
+import { Process } from './sections/Process';
 import { FAQ } from './sections/FAQ';
 import { ClosingCTA } from './sections/ClosingCTA';
 
@@ -39,6 +40,7 @@ function App() {
         <SelectedWork />
         <System />
         <About />
+        <Process />
         <FAQ />
         <ClosingCTA />
       </main>

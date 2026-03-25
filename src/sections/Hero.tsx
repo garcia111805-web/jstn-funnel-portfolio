@@ -33,16 +33,16 @@ export function Hero() {
 
   return (
     <div className="w-full">
-      <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden pt-16">
+      <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden pt-[calc(env(safe-area-inset-top,0px)+120px)] lg:pt-32">
         <div className="section-content w-full px-6 lg:px-12 flex flex-col items-center justify-center relative z-10">
           {/* Headline - with proper spacing */}
           <h1
             className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold text-center text-jstn-text-primary max-w-5xl mx-auto leading-[1.2] tracking-tight mb-6"
           >
             More Leads. More Bookings.<br className="hidden sm:block" />
-            <div className="mt-1 sm:mt-2">
-              More Revenue for{' '}
-              <span className="inline-grid overflow-hidden text-jstn-green text-center align-bottom">
+            <div className="mt-2 sm:mt-3 flex flex-col sm:block items-center">
+              <span className="inline">More Revenue for{' '}</span>
+              <span className="inline-grid overflow-hidden text-jstn-green text-center align-bottom mt-1 sm:mt-0">
                 <span className="invisible col-start-1 row-start-1 whitespace-nowrap px-1">Pool Installation</span>
                 {niches.map((niche, i) => (
                   <span
@@ -59,7 +59,7 @@ export function Hero() {
                   </span>
                 ))}
               </span>{' '}
-              <span className="inline-block mt-1 sm:mt-0">& Home Service Pros.</span>
+              <span className="inline-block mt-2 sm:mt-0">& Home Service Pros.</span>
             </div>
           </h1>
 
@@ -76,7 +76,7 @@ export function Hero() {
               onClick={() => scrollToSection('#cta')}
               className="btn-primary px-8 py-3.5 bg-jstn-green text-jstn-bg font-semibold rounded-full text-base"
             >
-              Message me to see the backend
+              Get the Free Demo on WhatsApp
             </button>
             <button
               onClick={() => scrollToSection('#problem')}

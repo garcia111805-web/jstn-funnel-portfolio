@@ -1,4 +1,4 @@
-import { MessageSquare, PhoneMissed, Star, RefreshCw, ArchiveRestore } from 'lucide-react';
+import { MessageSquare, PhoneMissed, Star, RefreshCw, ArchiveRestore, Inbox, PhoneCall } from 'lucide-react';
 const systems = [
   {
     icon: MessageSquare,
@@ -41,10 +41,11 @@ export function System() {
   return (
     <section
       id="system"
-      className="relative w-full py-20 lg:py-32"
+      className="relative w-full pt-4 lg:pt-8 pb-10 lg:pb-16"
     >
       <div className="section-content w-full px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="mb-16 lg:mb-24">
+          <span className="tag-pill mb-4 inline-flex">The Solution: Part 2</span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-jstn-text-primary max-w-3xl leading-tight tracking-tight mb-4">
             Built Once. Runs Every Day Without You.
           </h2>
@@ -94,11 +95,80 @@ export function System() {
           })}
         </div>
 
-        <div className="mt-16 lg:mt-24 text-center">
+        <div className="mt-16 lg:mt-24 mb-16 lg:mb-24 text-center">
           <p className="font-display text-xl lg:text-2xl text-jstn-text-primary">
             Five systems. All running simultaneously.{' '}
             <span className="text-jstn-green">All without you touching a thing.</span>
           </p>
+        </div>
+
+        {/* Feature Section: Inbox & Phone */}
+
+        <div className="mt-10 lg:mt-16 mb-10 lg:mb-16">
+          <span className="tag-pill mb-4 inline-flex">The Solution: Part 3</span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-semibold text-jstn-text-primary max-w-3xl leading-tight tracking-tight mb-4">
+            Manage Everything in One Place.
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          {/* Card 1: All in One Inbox */}
+          <div className="stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden gap-6">
+            <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+            
+            <div className="relative z-10 w-full flex flex-col h-full">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
+                  <Inbox className="w-5 h-5 text-jstn-green" />
+                </div>
+                <span className="tag-pill m-0 inline-flex">STAY ORGANIZED</span>
+              </div>
+
+              <h3 className="font-display text-2xl lg:text-3xl font-semibold text-jstn-text-primary mb-3">
+                All in One Inbox
+              </h3>
+              <p className="text-sm lg:text-base text-jstn-text-secondary leading-relaxed mb-4 lg:mb-0">
+                Every message from Facebook, Instagram, SMS, and email lands in one place so nothing gets missed. No more switching between apps, every lead gets a fast response from a single inbox.
+              </p>
+            </div>
+
+            <div className="relative z-10 w-full mt-auto">
+              <div className="p-4 lg:p-5 rounded-xl bg-black/40 border border-white/5 shadow-inner">
+                <p className="text-sm font-medium text-jstn-text-primary/90 italic">
+                  "One inbox. Every message. Zero leads lost."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Business Phone Number */}
+          <div className="stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden gap-6">
+            <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
+            
+            <div className="relative z-10 w-full flex flex-col h-full">
+              <div className="flex items-center gap-4 mb-5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
+                  <PhoneCall className="w-5 h-5 text-jstn-green" />
+                </div>
+                <span className="tag-pill m-0 inline-flex">LOOK PROFESSIONAL</span>
+              </div>
+
+              <h3 className="font-display text-2xl lg:text-3xl font-semibold text-jstn-text-primary mb-3">
+                Business Phone Number
+              </h3>
+              <p className="text-sm lg:text-base text-jstn-text-secondary leading-relaxed mb-4 lg:mb-0">
+                Your clients will always reach a dedicated business number that keeps your personal and professional life completely separate. Every call is tracked and recorded so you always know where your leads are coming from.
+              </p>
+            </div>
+
+            <div className="relative z-10 w-full mt-auto">
+              <div className="p-4 lg:p-5 rounded-xl bg-black/40 border border-white/5 shadow-inner">
+                <p className="text-sm font-medium text-jstn-text-primary/90 italic">
+                  "A real business number that builds trust before you even answer."
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

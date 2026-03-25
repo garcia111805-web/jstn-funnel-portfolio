@@ -40,15 +40,15 @@ export function Navigation() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 pt-4 sm:pt-6 pointer-events-none">
+      <div className="fixed top-0 left-0 right-0 z-50 flex justify-center w-full px-4 pt-[calc(env(safe-area-inset-top,0px)+16px)] sm:pt-6 pointer-events-none">
         <nav
-          className={`pointer-events-auto transition-all duration-300 rounded-full border ${isScrolled
+          className={`pointer-events-auto transition-all duration-300 rounded-full border w-full max-w-5xl ${isScrolled
             ? 'bg-jstn-bg/80 backdrop-blur-xl border-white/10 shadow-lg'
             : 'bg-transparent border-transparent'
             }`}
         >
           <div className="px-6 lg:px-8">
-            <div className="flex items-center gap-8 lg:gap-12 h-20 lg:h-24">
+            <div className="flex items-center justify-between lg:justify-center gap-8 lg:gap-12 h-16 lg:h-24">
               {/* Logo */}
               <a
                 href="#"
@@ -58,7 +58,7 @@ export function Navigation() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
-                <img src={newLogo} alt="jstn logo" className="h-20 lg:h-24 w-auto object-contain -ml-2" />
+                <img src={newLogo} alt="jstn logo" className="h-14 lg:h-16 w-auto object-contain -ml-2" />
               </a>
 
               {/* Desktop Navigation */}
@@ -80,7 +80,7 @@ export function Navigation() {
                   onClick={scrollToCTA}
                   className="btn-primary px-5 py-2.5 bg-jstn-green text-jstn-bg font-medium text-sm rounded-full"
                 >
-                  Claim My 20 Hours
+                  Get Free Demo
                 </button>
               </div>
 
@@ -118,7 +118,7 @@ export function Navigation() {
             }}
             className="mt-4 px-8 py-3 bg-jstn-green text-jstn-bg font-medium rounded-full"
           >
-            Claim My 20 Hours
+            Get Free Demo
           </button>
         </div>
       </div>
