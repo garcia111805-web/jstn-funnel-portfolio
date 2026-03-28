@@ -1,4 +1,4 @@
-import { PhoneOff, Clock, Star, Users, TrendingDown } from 'lucide-react';
+import { PhoneOff, Clock, Star, Users } from 'lucide-react';
 
 const stats = [
   {
@@ -25,12 +25,6 @@ const stats = [
     label: 'of clients would refer you, but only 11% are ever asked.',
     copy: "You’re leaving \"Found Money\" on the table. Without a post-job referral loop, you’re forced to pay for expensive new ads every month instead of growing through automated, high-trust word-of-mouth.",
   },
-  {
-    icon: TrendingDown,
-    stat: '5x',
-    label: 'more expensive to get a new lead than reactivate an old one.',
-    copy: "You have hundreds of past leads and old customers sitting in an Excel sheet. Without a system to \"wake them up,\" that hidden profit stays buried in your inbox while you spend more money hunting for new strangers.",
-  },
 ];
 
 export function Pain() {
@@ -48,7 +42,7 @@ export function Pain() {
             You're Losing Jobs Without Even Realizing It.
           </h2>
           <p className="text-jstn-text-secondary text-base lg:text-lg max-w-xl lg:max-w-3xl">
-            You're ignoring inbound calls, replying to web leads too late, letting past clients forget about you, and losing thousands to unanswered estimates. Here's what your leaky system is actually costing you.
+            You're ignoring inbound calls, replying to web leads too late, and losing thousands to unanswered estimates. Here's what your leaky system is actually costing you.
           </p>
         </div>
 
@@ -59,7 +53,7 @@ export function Pain() {
             return (
               <div
                 key={index}
-                className={`stat-card flex flex-col items-start gap-4 p-6 lg:p-8 ${index === 4 ? "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8 justify-center" : ""}`}
+                className="stat-card flex flex-col items-start gap-4 p-6 lg:p-8"
               >
                 <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
                 <div className="relative z-10 flex items-center gap-4 mb-4 lg:mb-6">

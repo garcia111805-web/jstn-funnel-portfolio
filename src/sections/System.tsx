@@ -1,4 +1,4 @@
-import { MessageSquare, PhoneMissed, Star, RefreshCw, ArchiveRestore, Inbox, PhoneCall } from 'lucide-react';
+import { MessageSquare, PhoneMissed, Star, RefreshCw, Inbox, PhoneCall } from 'lucide-react';
 const systems = [
   {
     icon: MessageSquare,
@@ -27,13 +27,6 @@ const systems = [
     name: 'Remarketing Campaigns',
     copy: "Once a client leaves a review, we automatically send them a discount they can use for their next job or share with a friend to get them a deal too.",
     caption: 'Turn happy clients into repeat customers and referral machines.',
-  },
-  {
-    icon: ArchiveRestore,
-    tag: 'HIDDEN REVENUE',
-    name: 'Database Reactivation',
-    copy: "Got old contacts who never hired you? We send them a simple friendly message to remind them you are still around and ready to help. No lead left behind.",
-    caption: 'Recover revenue from leads you already worked hard to get.',
   },
 ];
 
@@ -97,7 +90,7 @@ export function System() {
 
         <div className="mt-16 lg:mt-24 mb-16 lg:mb-24 text-center">
           <p className="font-display text-xl lg:text-2xl text-jstn-text-primary">
-            Five systems. All running simultaneously.{' '}
+            Four systems. All running simultaneously.{' '}
             <span className="text-jstn-green">All without you touching a thing.</span>
           </p>
         </div>

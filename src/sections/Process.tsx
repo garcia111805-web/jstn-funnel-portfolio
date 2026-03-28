@@ -2,9 +2,9 @@ export function Process() {
   const steps = [
     {
       number: '1',
-      title: 'Demo Call',
+      title: 'Clarity Call',
       subtitle: '(20 mins)',
-      description: "Let's be real—this is a low-pressure discovery call to see if we're essentially a perfect fit for your business. We'll walk you through live results, answer your questions, and show you exactly what to expect."
+      description: "The sole purpose of this call is for me to answer any specific questions you have. Just make sure you have already watched the short video walkthrough I sent over before hopping on the call."
     },
     {
       number: '2',

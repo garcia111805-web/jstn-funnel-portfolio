@@ -50,7 +50,7 @@ export function About() {
             ))}
           </div>
 
-          {/* THIS IS FOR JSTN */}
+          {/* THIS IS FOR jstn */}
           <div className="space-y-4">
             <h3 className="text-sm font-mono font-medium text-jstn-green uppercase tracking-wider mb-6">
               THIS IS FOR YOU
@@ -86,10 +86,10 @@ export function About() {
           {/* Text */}
           <div className="founder-text flex-1">
             <p className="text-jstn-text-primary text-base lg:text-lg leading-relaxed mb-5 font-medium">
-              At JSTN Systems, we keep it simple. No buzzwords, no overcomplicated strategies, no agencies charging a fortune just to confuse you. We built this for home service contractors who are great at their craft but tired of losing jobs to competitors who are simply faster at following up.
+              At jstn systems, we keep it simple. No buzzwords, no overcomplicated strategies, no agencies charging a fortune just to confuse you. We built this for home service contractors who are great at their craft but tired of losing jobs to competitors who are simply faster at following up.
             </p>
             <p className="text-jstn-text-secondary text-base lg:text-lg leading-relaxed mb-6">
-              We handle everything that happens before you pull up to the job site. The follow ups, the missed calls, the review requests, the dead leads sitting in your phone. All of it. You focus on doing the work, we make sure the work never stops coming in.
+              We handle everything that happens before you pull up to the job site. The follow ups, the missed calls, and the review requests. All of it. You focus on doing the work, we make sure the work never stops coming in.
             </p>
             <p className="text-jstn-text-primary/80 italic leading-relaxed mb-6 font-medium">
               "If it does not grow your business, it does not work for us either."
