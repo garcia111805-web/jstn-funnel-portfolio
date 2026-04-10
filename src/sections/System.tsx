@@ -1,4 +1,4 @@
-import { MessageSquare, PhoneMissed, Star, RefreshCw, Inbox, PhoneCall } from 'lucide-react';
+import { MessageSquare, PhoneMissed, Star, Inbox } from 'lucide-react';
 const systems = [
   {
     icon: MessageSquare,
@@ -20,13 +20,6 @@ const systems = [
     name: 'Reputation Management',
     copy: "Happy clients get sent straight to Google to leave a public 5 star review. Unhappy clients are handled privately so your online reputation stays protected.",
     caption: 'More 5 star reviews. Zero public complaints.',
-  },
-  {
-    icon: RefreshCw,
-    tag: 'RE-ENGAGE',
-    name: 'Remarketing Campaigns',
-    copy: "Once a client leaves a review, we automatically send them a discount they can use for their next job or share with a friend to get them a deal too.",
-    caption: 'Turn happy clients into repeat customers and referral machines.',
   },
 ];
 
@@ -54,11 +47,11 @@ export function System() {
             return (
               <div
                 key={index}
-                className={`stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden ${index === 4 ? "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8 lg:justify-between" : "gap-6"}`}
+                className={`stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden ${index === 2 ? "lg:col-span-2 lg:flex-row lg:items-center lg:gap-8 lg:justify-between" : "gap-6"}`}
               >
                 <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
                 
-                <div className={`relative z-10 w-full flex flex-col ${index === 4 ? "lg:w-1/2" : "h-full"}`}>
+                <div className={`relative z-10 w-full flex flex-col ${index === 2 ? "lg:w-1/2" : "h-full"}`}>
                   {/* Header (Badge + Icon) */}
                   <div className="flex items-center gap-4 mb-5">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
@@ -76,7 +69,7 @@ export function System() {
                 </div>
 
                 {/* Subtext/Caption */}
-                <div className={`relative z-10 w-full mt-auto ${index === 4 ? "lg:w-1/2 lg:mt-0 lg:pl-6 lg:border-l lg:border-white/10" : ""}`}>
+                <div className={`relative z-10 w-full mt-auto ${index === 2 ? "lg:w-1/2 lg:mt-0 lg:pl-6 lg:border-l lg:border-white/10" : ""}`}>
                   <div className="p-4 lg:p-5 rounded-xl bg-black/40 border border-white/5 shadow-inner">
                     <p className="text-sm font-medium text-jstn-text-primary/90 italic">
                       "{system.caption}"
@@ -90,7 +83,7 @@ export function System() {
 
         <div className="mt-16 lg:mt-24 mb-16 lg:mb-24 text-center">
           <p className="font-display text-xl lg:text-2xl text-jstn-text-primary">
-            Four systems. All running simultaneously.{' '}
+            Three systems. All running simultaneously.{' '}
             <span className="text-jstn-green">All without you touching a thing.</span>
           </p>
         </div>
@@ -104,7 +97,7 @@ export function System() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 gap-4 lg:gap-6">
           {/* Card 1: All in One Inbox */}
           <div className="stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden gap-6">
             <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
@@ -129,35 +122,6 @@ export function System() {
               <div className="p-4 lg:p-5 rounded-xl bg-black/40 border border-white/5 shadow-inner">
                 <p className="text-sm font-medium text-jstn-text-primary/90 italic">
                   "One inbox. Every message. Zero leads lost."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Card 2: Business Phone Number */}
-          <div className="stat-card flex flex-col items-start p-6 lg:p-8 w-full group relative overflow-hidden gap-6">
-            <div className="absolute top-0 right-0 w-56 h-56 bg-jstn-green/5 rounded-full blur-3xl -ml-28 -mt-28 transition-opacity opacity-0 group-hover:opacity-100 pointer-events-none"></div>
-            
-            <div className="relative z-10 w-full flex flex-col h-full">
-              <div className="flex items-center gap-4 mb-5">
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-jstn-green/10 flex items-center justify-center border border-jstn-green/20">
-                  <PhoneCall className="w-5 h-5 text-jstn-green" />
-                </div>
-                <span className="tag-pill m-0 inline-flex">LOOK PROFESSIONAL</span>
-              </div>
-
-              <h3 className="font-display text-2xl lg:text-3xl font-semibold text-jstn-text-primary mb-3">
-                Business Phone Number
-              </h3>
-              <p className="text-sm lg:text-base text-jstn-text-secondary leading-relaxed mb-4 lg:mb-0">
-                Your clients will always reach a dedicated business number that keeps your personal and professional life completely separate. Every call is tracked and recorded so you always know where your leads are coming from.
-              </p>
-            </div>
-
-            <div className="relative z-10 w-full mt-auto">
-              <div className="p-4 lg:p-5 rounded-xl bg-black/40 border border-white/5 shadow-inner">
-                <p className="text-sm font-medium text-jstn-text-primary/90 italic">
-                  "A real business number that builds trust before you even answer."
                 </p>
               </div>
             </div>
