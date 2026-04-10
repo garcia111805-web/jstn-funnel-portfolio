@@ -1,4 +1,4 @@
-import { PhoneOff, Clock, Star, Users } from 'lucide-react';
+import { PhoneOff, Clock, Star } from 'lucide-react';
 
 const stats = [
   {
@@ -18,12 +18,6 @@ const stats = [
     stat: '80%',
     label: 'of happy clients forget to leave a review.',
     copy: "You do great work, but without automation, your Google ranking stays flat. One bad review can kill your trust because you aren't capturing the 5-star feedback that outweighs the noise.",
-  },
-  {
-    icon: Users,
-    stat: '91%',
-    label: 'of clients would refer you, but only 11% are ever asked.',
-    copy: "You’re leaving \"Found Money\" on the table. Without a post-job referral loop, you’re forced to pay for expensive new ads every month instead of growing through automated, high-trust word-of-mouth.",
   },
 ];
 
