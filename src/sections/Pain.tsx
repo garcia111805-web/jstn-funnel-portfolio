@@ -1,4 +1,4 @@
-import { PhoneOff, Clock } from 'lucide-react';
+import { PhoneOff, Clock, Star } from 'lucide-react';
 
 const stats = [
   {
@@ -12,6 +12,12 @@ const stats = [
     stat: '62%',
     label: 'of calls to small businesses go unanswered.',
     copy: "When you're under a sink or on a roof, you can't pick up. Every missed call is a customer who just moved to the next contractor on the Google list. Every unanswered call is a high-value contract walking out the door.",
+  },
+  {
+    icon: Star,
+    stat: '80%',
+    label: 'of happy clients forget to leave a review.',
+    copy: "You do great work, but without automation, your Google ranking stays flat. One bad review can kill your trust because you aren't capturing the 5-star feedback that outweighs the noise.",
   },
 ];
 
